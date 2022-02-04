@@ -1,0 +1,67 @@
+<div class="row section-break" data-label="Amenities Section">
+    <div class="col-xs-12 column-break">
+
+        <div data-fieldname="amenities" data-fieldtype="Table">
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th style="width: 40px" class="table-sr">SN</th>
+
+                        <th style="width: 150px;" class="
+	" data-fieldname="amenities" data-fieldtype="Table">
+                            Amenity</th>
+
+                        <th style="width: 80px;" class="
+	text-right" data-fieldname="amenities" data-fieldtype="Table">
+                            Amenity Price</th>
+
+                        <th style="width: 150px;" class="
+	text-right" data-fieldname="amenities" data-fieldtype="Table">
+                            discount</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for amenity in doc.amenities %}
+
+                    <tr>
+                        <td class="table-sr">{{loop.index}}</td>
+
+                        <td class="
+	" data-fieldname="amenities" data-fieldtype="Table">
+
+                            <div class="value">{{amenity.amenity}}
+                            </div>
+                        </td>
+
+
+                        <td class="
+	text-right" data-fieldname="amenities" data-fieldtype="Table">
+
+                            <div class="value">
+                            {{amenity.get_formatted('amenity_price', amenity)}}
+                            </div>
+                        </td>
+
+
+                        <td class="
+	text-right" data-fieldname="amenities" data-fieldtype="Table">
+
+                            <div class="value">{{amenity.get_formatted('discount', amenity)}}
+                            </div>
+                        </td>
+
+
+                    </tr>
+
+
+
+
+{% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
